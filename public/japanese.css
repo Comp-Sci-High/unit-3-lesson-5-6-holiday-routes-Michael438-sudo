@@ -1,0 +1,83 @@
+:root{
+  --red:#c21b1b;
+  --white:#fff8f3;
+  --gold:#f3c13a;
+  --dark:#3d3d3d;
+  --wood:#8b4513;
+}
+*{box-sizing:border-box}
+body{font-family:'Georgia', serif, system-ui; margin:0; background:var(--white); color:var(--dark)}
+.hero{background:linear-gradient(180deg, #8b0000, #c21b1b); color:var(--gold); padding:3.5rem 1rem; text-align:center}
+.title-wrapper{display:flex;align-items:center;justify-content:space-between;gap:2rem;margin:0 -1rem}
+.title-image{width:140px;height:auto;object-fit:contain;flex-shrink:0}
+.title-left{transform:scaleX(-1)}
+.title{font-size:2.4rem; margin:0 0 .25rem; letter-spacing:2px; font-weight:700;flex:0 0 auto}
+
+@media (min-width:900px){
+  .title-wrapper{margin:0 -2rem;gap:3rem}
+  .title-image{width:200px}
+}
+.subtitle{font-size:1.1rem; margin:0.5rem 0 0; opacity:0.95; font-style:italic}
+.lead{margin:0.8rem 0 1rem; opacity:0.9; font-size:1.05rem}
+.lanterns{display:flex;gap:1rem;justify-content:center;align-items:center}
+.lantern{display:inline-block;font-size:2.2rem;transform-origin:center top;animation:swing 3s ease-in-out infinite}
+.lantern:nth-child(2){animation-delay:.25s}
+.lantern:nth-child(3){animation-delay:.55s}
+@keyframes swing{0%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}100%{transform:rotate(-6deg)}}
+.content{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;padding:2rem 1.5rem;max-width:1100px;margin:0 auto}
+.card{background:rgba(255,248,243,0.95);border-radius:8px;padding:1.5rem;border:2px solid #d4a574;box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+.card h2{color:var(--red);margin-top:0;font-size:1.3rem}
+.card ul{margin:0.8rem 0;padding-left:1.5rem}
+.card li{margin:0.4rem 0;line-height:1.6}
+.icons{font-size:1.8rem;margin-top:1rem;letter-spacing:0.4rem}
+.wishes{display:flex;gap:0.8rem;font-size:1.5rem;margin-top:1rem;justify-content:center}
+.wishes span{background:var(--red);color:var(--gold);padding:0.6rem 0.9rem;border-radius:6px;font-weight:700;box-shadow:0 4px 10px rgba(0,0,0,0.12)}
+.site-footer{text-align:center;padding:2rem 1rem 3rem;color:#5d4037;border-top:2px solid #d4a574;margin-top:2rem}
+.site-footer a{color:var(--red);text-decoration:underline}
+
+/* Shrine gates (torii) on sides */
+.torii{position:fixed;top:50%;pointer-events:none;z-index:2;opacity:0.85;transform:translateY(-50%)}
+.torii-left{left:1rem}
+.torii-right{right:1rem;transform:translateY(-50%) scaleX(-1)}
+.torii-svg{width:80px;height:auto;display:block;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.15))}
+@media (min-width:900px){
+  .torii-svg{width:110px}
+  .torii-left{left:1.5rem}
+  .torii-right{right:1.5rem}
+}
+@media (max-width:420px){
+  .torii{display:none}
+}
+
+/* Cherry blossom petals raining from the sky */
+.petals{position:fixed;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:3;overflow:hidden}
+.petal{position:absolute;top:-15vh;display:inline-block;font-size:32px;opacity:1;animation:petalFall linear infinite;text-shadow:0 2px 4px rgba(0,0,0,0.1)}
+.petal:nth-child(1){left:5%;animation-duration:8s;animation-delay:0s}
+.petal:nth-child(2){left:12%;animation-duration:7s;animation-delay:0.3s}
+.petal:nth-child(3){left:20%;animation-duration:9s;animation-delay:0.6s}
+.petal:nth-child(4){left:28%;animation-duration:6.5s;animation-delay:0.1s}
+.petal:nth-child(5){left:36%;animation-duration:8.5s;animation-delay:0.4s}
+.petal:nth-child(6){left:44%;animation-duration:7.5s;animation-delay:0.7s}
+.petal:nth-child(7){left:52%;animation-duration:9.5s;animation-delay:0.2s}
+.petal:nth-child(8){left:60%;animation-duration:7.2s;animation-delay:0.5s}
+.petal:nth-child(9){left:68%;animation-duration:8.2s;animation-delay:0.8s}
+.petal:nth-child(10){left:76%;animation-duration:6.8s;animation-delay:0.15s}
+.petal:nth-child(11){left:84%;animation-duration:9.2s;animation-delay:0.35s}
+.petal:nth-child(12){left:92%;animation-duration:7.8s;animation-delay:0.6s}
+.petal:nth-child(13){left:8%;animation-duration:8.8s;animation-delay:0.25s}
+.petal:nth-child(14){left:40%;animation-duration:7.3s;animation-delay:0.55s}
+.petal:nth-child(15){left:80%;animation-duration:9s;animation-delay:0.45s}
+@keyframes petalFall{
+  0%{top:-15vh;opacity:1;transform:translateX(0) rotate(0deg)}
+  30%{opacity:1}
+  70%{opacity:1}
+  100%{top:110vh;opacity:0;transform:translateX(40px) rotate(540deg)}
+}
+
+@media (max-width:540px){
+  .petal{font-size:24px}
+}
+
+/* Decorative background pattern */
+body::before{content:'';position:fixed;left:0;top:0;right:0;bottom:0;background-image:radial-gradient(circle at 20% 50%, rgba(194,27,27,0.04) 0 2px, transparent 2px), radial-gradient(circle at 80% 30%, rgba(243,193,58,0.05) 0 2px, transparent 2px);pointer-events:none;z-index:0}
+.hero, .content, .site-footer{position:relative;z-index:4}

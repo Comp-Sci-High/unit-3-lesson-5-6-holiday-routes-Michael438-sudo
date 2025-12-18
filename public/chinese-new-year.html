@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Happy Lunar New Year</title>
+  <link rel="stylesheet" href="chinese.css">
+</head>
+<body>
+  <!-- Huge dragon heads (top-left and top-right) -->
+  <div class="big-dragon-head head-left" aria-hidden="true">
+    <img src="download.jpeg" alt="" class="head-img" />
+  </div>
+
+  <div class="big-dragon-head head-right" aria-hidden="true">
+    <img src="download.jpeg" alt="" class="head-img" />
+  </div>
+
+  <!-- Yen coins raining from the sky -->
+  <div class="yen-rain" aria-hidden="true">
+    <span class="yen">¥</span>
+    <span class="yen">¥</span>
+    <span class="yen">¥</span>
+    <span class="yen">¥</span>
+    <span class="yen">¥</span>
+    <span class="yen">¥</span>
+    <span class="yen">¥</span>
+    <span class="yen">¥</span>
+    <span class="yen">¥</span>
+    <span class="yen">¥</span>
+    <span class="yen">¥</span>
+    <span class="yen">¥</span>
+    <span class="yen">¥</span>
+    <span class="yen">¥</span>
+    <span class="yen">¥</span>
+    <span class="yen">¥</span>
+    <span class="yen">¥</span>
+    <span class="yen">¥</span>
+    <span class="yen">¥</span>
+    <span class="yen">¥</span>
+  </div>
+  <div class="decor-dragon dragon-left" aria-hidden="true">
+    <img src="download.jpeg" alt="" class="dragon-img" />
+  </div>
+
+  <div class="decor-dragon dragon-right" aria-hidden="true">
+    <img src="download.jpeg" alt="" class="dragon-img" />
+  </div>
+  <!-- Kongming lantern columns (left + right) -->
+  <div class="kongming kongming-left" aria-hidden="true">
+    <div class="lantern-item"> <svg viewBox="0 0 64 80" class="lantern-svg"><ellipse cx="32" cy="34" rx="22" ry="20" fill="var(--red)" stroke="var(--dark)" stroke-width="2"/><rect x="28" y="54" width="8" height="12" fill="var(--dark)"/></svg></div>
+    <div class="lantern-item"> <svg viewBox="0 0 64 80" class="lantern-svg"><ellipse cx="32" cy="34" rx="22" ry="20" fill="var(--red)" stroke="var(--dark)" stroke-width="2"/><rect x="28" y="54" width="8" height="12" fill="var(--dark)"/></svg></div>
+    <div class="lantern-item"> <svg viewBox="0 0 64 80" class="lantern-svg"><ellipse cx="32" cy="34" rx="22" ry="20" fill="var(--red)" stroke="var(--dark)" stroke-width="2"/><rect x="28" y="54" width="8" height="12" fill="var(--dark)"/></svg></div>
+    <div class="lantern-item"> <svg viewBox="0 0 64 80" class="lantern-svg"><ellipse cx="32" cy="34" rx="22" ry="20" fill="var(--red)" stroke="var(--dark)" stroke-width="2"/><rect x="28" y="54" width="8" height="12" fill="var(--dark)"/></svg></div>
+  </div>
+  <div class="kongming kongming-right" aria-hidden="true">
+    <div class="lantern-item"> <svg viewBox="0 0 64 80" class="lantern-svg"><ellipse cx="32" cy="34" rx="22" ry="20" fill="var(--red)" stroke="var(--dark)" stroke-width="2"/><rect x="28" y="54" width="8" height="12" fill="var(--dark)"/></svg></div>
+    <div class="lantern-item"> <svg viewBox="0 0 64 80" class="lantern-svg"><ellipse cx="32" cy="34" rx="22" ry="20" fill="var(--red)" stroke="var(--dark)" stroke-width="2"/><rect x="28" y="54" width="8" height="12" fill="var(--dark)"/></svg></div>
+    <div class="lantern-item"> <svg viewBox="0 0 64 80" class="lantern-svg"><ellipse cx="32" cy="34" rx="22" ry="20" fill="var(--red)" stroke="var(--dark)" stroke-width="2"/><rect x="28" y="54" width="8" height="12" fill="var(--dark)"/></svg></div>
+    <div class="lantern-item"> <svg viewBox="0 0 64 80" class="lantern-svg"><ellipse cx="32" cy="34" rx="22" ry="20" fill="var(--red)" stroke="var(--dark)" stroke-width="2"/><rect x="28" y="54" width="8" height="12" fill="var(--dark)"/></svg></div>
+  </div>
+
+  <!-- Golden loong dragon whose tails run through corners -->
+  <div class="loong-wrap" aria-hidden="true">
+    <svg viewBox="0 0 2000 1000" class="loong-svg" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="goldGrad" x1="0%" x2="100%">
+          <stop offset="0%" stop-color="#fff0c8"/>
+          <stop offset="35%" stop-color="#f6d77a"/>
+          <stop offset="65%" stop-color="#f3c13a"/>
+          <stop offset="100%" stop-color="#d99b12"/>
+        </linearGradient>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="8" result="g" />
+          <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <pattern id="scales" patternUnits="userSpaceOnUse" width="16" height="16">
+          <path d="M0 10 C4 4,10 4,16 10" stroke="#c88a10" stroke-width="1" fill="none" opacity="0.35"/>
+        </pattern>
+      </defs>
+      <!-- extremely long loong body spanning far beyond viewbox corners -->
+      <g filter="url(#glow)">
+        <path d="M -1400 -600 C -1000 -450, -700 -300, -300 -180 C 0 -100, 180 -60, 420 -20 C 760 40, 980 20, 1260 120 C 1500 220, 1720 420, 2200 1100" stroke="url(#goldGrad)" stroke-width="48" stroke-linecap="round" fill="none"/>
+        <path d="M -1360 -580 C -980 -430, -690 -280, -290 -160 C 30 -80, 200 -40, 430 0 C 770 60, 990 40, 1270 140 C 1510 240, 1730 440, 2210 1110" stroke="#d99b12" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.9"/>
+        <path d="M -1320 -560 C -960 -410, -670 -260, -280 -140 C 60 -60, 220 -20, 440 20 C 780 80, 1000 60, 1280 160 C 1520 260, 1740 460, 2230 1120" stroke="url(#scales)" stroke-width="36" stroke-linecap="round" fill="none" opacity="0.95"/>
+      </g>
+      <!-- tail markers beyond corners to emphasize extreme length -->
+      <circle cx="-1440" cy="-640" r="36" fill="#f3c13a" opacity="0.98"/>
+      <circle cx="2260" cy="1160" r="36" fill="#f3c13a" opacity="0.98"/>
+      <!-- more detailed head with jaw and whiskers -->
+      <g transform="translate(1260,120)">
+        <path d="M0 -40 C 32 -56, 70 -44, 96 -6 C 118 30, 94 78, 58 86 C 30 92, -6 74, -28 46 C -46 22, -28 6, 0 -40 Z" fill="#f3c13a" stroke="#a86b10" stroke-width="3"/>
+        <path d="M88 4 C 110 10, 132 22, 148 46" stroke="#d99b12" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="44" cy="18" r="6" fill="#5b2a00"/>
+        <path d="M-8 34 C 10 48, 40 64, 72 56" stroke="#c88a10" stroke-width="2.2" fill="none" opacity="0.95"/>
+        <path d="M16 -8 C 8 -2, 2 0, 0 6" stroke="#8b3f06" stroke-width="1.6" fill="none" opacity="0.9"/>
+      </g>
+    </svg>
+  </div>
+  <header class="hero">
+    <div class="hero-inner">
+      <h1 class="title">Happy Lunar New Year</h1>
+      <p class="lead">Wishing you luck, health, and prosperity.</p>
+      <div class="decor">
+        <div class="lanterns">
+          <span class="lantern">🏮</span>
+          <span class="lantern">🏮</span>
+          <span class="lantern">🏮</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+    <section class="card">
+      <h2>Traditions</h2>
+      <ul>
+        <li>Red decorations for good luck</li>
+        <li>Family reunion dinners</li>
+        <li>Red envelopes (🧧) with wishes</li>
+        <li>Dragon and lion dances</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Fun Activities</h2>
+      <p>Make paper lanterns, prepare dumplings, and enjoy fireworks safely.</p>
+      <div class="icons">🎆 🐉 🧧 🥟</div>
+    </section>
+
+    <section class="card">
+      <h2>Wishes</h2>
+      <p>May the new year bring you success and joy.</p>
+      <div class="wishes">
+        <span>福</span>
+        <span>安</span>
+        <span>喜</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with ❤️ — Celebrate safely.</p>
+    <p><a href="/">Back to home</a> | <a href="japanese-new-year.html">Japanese New Year</a> | <a href="exotic-christmas.html">Exotic Christmas</a></p>
+  </footer>
+</body>
+</html>

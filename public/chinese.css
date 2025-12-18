@@ -1,0 +1,165 @@
+:root{
+  --red:#c21b1b;
+  --dark:#7a120f;
+  --gold:#f3c13a;
+  --bg:#fff6f4;
+}
+*{box-sizing:border-box}
+body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:var(--bg); color:var(--dark)}
+.hero{background:linear-gradient(180deg,var(--red),#e94b3c); color:var(--gold); padding:3.5rem 1rem; text-align:center}
+.title{font-size:2.2rem; margin:0 0 .25rem; letter-spacing:1px}
+.lead{margin:0 0 1rem; opacity:0.95}
+.lanterns{display:flex;gap:1rem;justify-content:center;align-items:center}
+.lantern{display:inline-block;font-size:2.2rem; transform-origin:center top; animation: swing 3s ease-in-out infinite}
+.lantern:nth-child(2){animation-delay:.25s}
+.lantern:nth-child(3){animation-delay:.55s}
+@keyframes swing{0%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}100%{transform:rotate(-6deg)}}
+.content{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;padding:1.5rem;max-width:1100px;margin:0 auto}
+.card{background:rgba(255,255,255,0.9);border-radius:10px;padding:1rem;border:3px solid rgba(242,197,52,0.14);box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+.card h2{color:var(--red);margin-top:0}
+.icons{font-size:1.6rem;margin-top:.6rem}
+.wishes{display:flex;gap:.6rem;font-size:1.6rem;margin-top:.5rem}
+.wishes span{background:var(--red);color:var(--gold);padding:.4rem .6rem;border-radius:6px;font-weight:700;box-shadow:0 4px 10px rgba(0,0,0,0.08)}
+.site-footer{text-align:center;padding:1rem 1rem 2rem;color:#442a2a}
+.site-footer a{color:var(--red);text-decoration:underline}
+
+/* decorative confetti */
+body::after{content:'';position:fixed;left:0;right:0;top:0;bottom:0;pointer-events:none;background-image:radial-gradient(circle at 10% 20%, rgba(243,193,58,0.12) 0 2px, transparent 2px), radial-gradient(circle at 80% 40%, rgba(242,114,86,0.10) 0 2px, transparent 2px), radial-gradient(circle at 50% 80%, rgba(194,27,27,0.08) 0 2px, transparent 2px);opacity:0.75;mix-blend-mode:screen}
+
+@media (min-width:900px){
+  .title{font-size:3rem}
+  .hero{padding:4.5rem 1rem}
+}
+
+/* Decorative dragons on either side */
+.decor-dragon{position:fixed;top:50%;pointer-events:none;z-index:2;opacity:0.95}
+.decor-dragon img{display:block;width:120px;height:auto;object-fit:contain}
+.dragon-img{width:120px;height:auto}
+.dragon-left{left:0.5rem;transform:translateY(-50%)}
+.dragon-right{right:0.5rem;transform:translateY(-50%) scaleX(-1)}
+
+@media (min-width:900px){
+  .decor-dragon img{width:160px;height:auto}
+  .dragon-img{width:160px}
+  .dragon-left{left:1rem}
+  .dragon-right{right:1rem}
+}
+
+/* gentle float animation applied to the image so container transforms are preserved */
+.decor-dragon img{animation: dragonFloat 5s ease-in-out infinite;transform-origin:center}
+@keyframes dragonFloat{
+  0%{transform:translateY(-2px) rotate(-2deg)}
+  50%{transform:translateY(4px) rotate(2deg)}
+  100%{transform:translateY(-2px) rotate(-2deg)}
+}
+
+/* hide on very small screens to avoid overlap */
+@media (max-width:420px){
+  .decor-dragon{display:none}
+}
+
+/* SVG styling for dragon artwork */
+.dragon-svg path, .dragon-svg circle{transition:transform .2s ease}
+.dragon-svg .dragon-body{fill:var(--red);stroke:var(--dark)}
+.dragon-svg .dragon-head{fill:var(--red);stroke:var(--dark)}
+.dragon-svg{filter:drop-shadow(0 6px 10px rgba(0,0,0,0.12))}
+
+/* Kongming lantern columns */
+.kongming{position:fixed;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:18px;z-index:3;pointer-events:none}
+.kongming-left{left:8px}
+.kongming-right{right:8px}
+.lantern-item{display:flex;align-items:center;justify-content:center;transform-origin:center;animation: lanternFloat 4s ease-in-out infinite}
+.lantern-svg{width:44px;height:56px}
+.lantern-item:nth-child(2){animation-delay:0.4s}
+.lantern-item:nth-child(3){animation-delay:0.9s}
+.lantern-item:nth-child(4){animation-delay:1.3s}
+
+@keyframes lanternFloat{
+  0%{transform:translateY(-2px) rotate(-1.5deg)}
+  50%{transform:translateY(6px) rotate(1.5deg)}
+  100%{transform:translateY(-2px) rotate(-1.5deg)}
+}
+
+/* Golden loong across page */
+.loong-wrap{position:fixed;left:0;top:0;width:100%;height:100%;z-index:1;pointer-events:none;overflow:visible}
+.loong-svg{width:100%;height:100%;opacity:0.95}
+.loong-svg path{mix-blend-mode:screen}
+
+/* make sure loong sits behind dragons but above background */
+.loong-wrap{z-index:1}
+.content, .hero, .site-footer{position:relative;z-index:4}
+
+/* Golden dragon heads on top corners */
+.big-dragon-head{position:fixed;top:0;pointer-events:none;z-index:6;transform-origin:center top;background:linear-gradient(180deg,var(--red),#e94b3c);border-radius:12px}
+.big-dragon-head img{width:280px;height:auto;display:block;object-fit:contain}
+.head-img{width:280px;height:auto}
+.head-left{left:0;transform:translate(-8%, -12%)}
+.head-right{right:0;transform:translate(8%, -12%) scaleX(-1)}
+
+@media (min-width:1200px){
+  .big-dragon-head img{width:360px}
+  .head-img{width:360px}
+  .head-left{transform:translate(-10%, -15%)}
+  .head-right{transform:translate(10%, -15%) scaleX(-1)}
+}
+
+@media (max-width:768px){
+  .big-dragon-head img{width:220px}
+  .head-img{width:220px}
+  .head-left{transform:translate(-6%, -10%)}
+  .head-right{transform:translate(6%, -10%) scaleX(-1)}
+}
+
+/* hide on very small screens to avoid overlap */
+@media (max-width:420px){
+  .big-dragon-head{display:none}
+}
+
+@media (max-width:540px){
+  .kongming{display:none}
+  .loong-svg{opacity:0.7}
+}
+
+/* Yen coins raining */
+.yen-rain{position:fixed;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:7;overflow:visible}
+.yen{position:absolute;top:-8vh;display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;font-weight:800;color:#5b2a00;background:radial-gradient(circle at 30% 30%, #fff7d9 0 30%, #f6d77a 40%, #d99b12 100%);box-shadow:0 6px 12px rgba(0,0,0,0.2);transform-origin:center center;opacity:0.98;font-size:16px}
+/* single composite fall animation (handles vertical movement, rotation and slight horizontal sway) */
+.yen{animation-name:yenFall;animation-iteration-count:infinite;animation-timing-function:linear;animation-fill-mode:forwards}
+@keyframes yenFall{
+  0%{transform:translateY(-8vh) translateX(0) rotate(0deg);opacity:0}
+  5%{opacity:1}
+  50%{transform:translateY(50vh) translateX(8px) rotate(180deg)}
+  100%{transform:translateY(112vh) translateX(0) rotate(360deg);opacity:0.95}
+}
+
+/* positions and staggered timings for variety */
+.yen:nth-child(1){left:4%;animation-duration:7.6s;animation-delay:0.2s}
+.yen:nth-child(2){left:11%;animation-duration:6.8s;animation-delay:0.6s}
+.yen:nth-child(3){left:18%;animation-duration:8.2s;animation-delay:0.9s}
+.yen:nth-child(4){left:25%;animation-duration:6.2s;animation-delay:0.1s}
+.yen:nth-child(5){left:32%;animation-duration:7.4s;animation-delay:0.4s}
+.yen:nth-child(6){left:39%;animation-duration:5.8s;animation-delay:0.7s}
+.yen:nth-child(7){left:46%;animation-duration:8.6s;animation-delay:1.0s}
+.yen:nth-child(8){left:53%;animation-duration:6.4s;animation-delay:0.3s}
+.yen:nth-child(9){left:60%;animation-duration:7.9s;animation-delay:0.8s}
+.yen:nth-child(10){left:67%;animation-duration:6.1s;animation-delay:0.25s}
+.yen:nth-child(11){left:74%;animation-duration:8.8s;animation-delay:0.65s}
+.yen:nth-child(12){left:81%;animation-duration:7.1s;animation-delay:0.95s}
+.yen:nth-child(13){left:88%;animation-duration:6.6s;animation-delay:0.15s}
+.yen:nth-child(14){left:6%;animation-duration:9.0s;animation-delay:1.2s}
+.yen:nth-child(15){left:15%;animation-duration:5.6s;animation-delay:0.05s}
+.yen:nth-child(16){left:28%;animation-duration:9.4s;animation-delay:0.5s}
+.yen:nth-child(17){left:42%;animation-duration:6.9s;animation-delay:0.35s}
+.yen:nth-child(18){left:58%;animation-duration:7.7s;animation-delay:0.55s}
+.yen:nth-child(19){left:70%;animation-duration:5.9s;animation-delay:0.2s}
+.yen:nth-child(20){left:92%;animation-duration:8.0s;animation-delay:0.75s}
+
+/* add slight horizontal sway for some coins */
+.yen:nth-child(odd){animation-name:yenFall, yenSpin, yenSway}
+@keyframes yenSway{0%{margin-left:0}50%{margin-left:6px}100%{margin-left:0}}
+
+/* reduce visual load on small screens */
+@media (max-width:640px){
+  .yen{width:28px;height:28px;font-size:14px}
+  .yen:nth-child(14), .yen:nth-child(16), .yen:nth-child(11), .yen:nth-child(7){display:none}
+}
