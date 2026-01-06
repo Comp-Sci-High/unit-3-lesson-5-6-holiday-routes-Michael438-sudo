@@ -91,6 +91,7 @@ body{font-family:'Trebuchet MS', sans-serif;margin:0;background:linear-gradient(
 .star:nth-child(8){left:70%;top:50%;animation-delay:1.8s}
 @keyframes twinkle{0%,100%{opacity:0.3}50%{opacity:1}}
 
+// the below code effects layering of content
 /* Content layering */
 .hero, .content, .site-footer{position:relative;z-index:4}
 
